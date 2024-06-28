@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HPMovie } from '../../models/hp-movie';
 import { HPMoviesService } from '../../services/hp-movies.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './hp-movies-list.component.html',
   styleUrl: './hp-movies-list.component.css'
 })
-export class HpMoviesListComponent {
+export class HpMoviesListComponent implements OnInit {
   moviesList: HPMovie[] = [];
   filteredMovies: HPMovie[] = [];
   nameFilter: string = '';

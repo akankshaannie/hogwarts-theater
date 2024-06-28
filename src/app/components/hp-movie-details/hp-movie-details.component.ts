@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HPMovieDetails } from '../../models/hp-movie-details';
 import { MovieBudgetPipe } from '../../pipes/movie-budget.pipe';
@@ -12,7 +12,7 @@ import { HPMoviesService } from '../../services/hp-movies.service';
   templateUrl: './hp-movie-details.component.html',
   styleUrl: './hp-movie-details.component.css',
 })
-export class HpMovieDetailsComponent {
+export class HpMovieDetailsComponent implements OnInit {
   movie: HPMovieDetails | undefined;
 
   constructor(
