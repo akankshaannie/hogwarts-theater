@@ -1,0 +1,34 @@
+.movie-card {
+    background-color: whitesmoke;
+    border-radius: 8px;
+  }
+  
+  .movie-card button{
+    border-radius: 8px;
+  }
+
+  img{
+    height: auto;
+  }
+
+  li {
+    font-size: 14px;
+    margin-left: 10px;
+    list-style-type: circle;
+    /* display: inline; */
+ }
+ label{
+    font-weight: 600;
+ }
+
+ .align-button {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 !important;
+ }
+
+ .position-relative {
+    position: relative;
+}

@@ -1,0 +1,53 @@
+<div class="container-fluid p-4 text-center justify-content-center">
+  <div class="row justify-content-center">
+    <div
+      class="col-lg-6 col-md-8 col-sm-10 col-12 justify-content-center bg-body-tertiary p-2"
+    >
+      <div class="text-start"><h5>Filters</h5></div>
+      <div class="d-md-flex justify-content-around align-items-center">
+        <div class="input-group">
+          <span class="input-group-text">Title</span>
+          <input
+            type="text"
+            [(ngModel)]="nameFilter"
+            (input)="filterMovies()"
+            class="form-control"
+          />
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">Release Year</span>
+          <input
+            type="text"
+            [(ngModel)]="yearFilter"
+            (input)="filterMovies()"
+            class="form-control"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <ul>
+      <li
+        *ngFor="let movie of filteredMovies"
+        class="row justify-content-center mt-3"
+      >
+        <div class="col-lg-7 col-md-10 col-sm-12 col-12">
+          <div class="movie-card position-relative">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5 class="movie-card-title"> &bull; {{ movie?.title }}</h5>
+              <button id={{movie?.id}} (click)="goToDetails(movie?.id)" class="primary btn btn-primary btn-sm m-2 align-button">Details</button>
+            </div>
+            <div class="text-start">
+              <small>
+                <label> Duration:</label> {{ movie?.duration | movieDuration }} &nbsp; <label> Budget:</label> 
+                {{ movie?.budget | movieBudget }} &nbsp; <label>  Release Date:</label> 
+                {{ movie?.release_date }}
+              </small>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

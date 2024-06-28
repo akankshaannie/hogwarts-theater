@@ -1,0 +1,57 @@
+<!-- movie-details.component.html -->
+<div class="container">
+    <div class="row mt-3">
+      <div class="back-button">
+        <button class="btn" (click)="goBack()"><i class="bi bi-house-door"></i>back</button>
+      </div>
+      <div class="col-11">
+        <h2>{{ movie?.title }}</h2>
+      </div>
+    </div>
+  
+    <div class="row mt-3 image-container">
+      <div class="col-md-6 col-12">
+        <img class="img-fluid" [src]="movie?.poster" alt="{{ movie?.title }} Poster" />
+      </div>
+      <div class="col-md-6 col-12 d-flex align-items-center">
+        <small class="">{{ movie?.summary }}</small>
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="col-12 text-center">
+        <h3>Details</h3>
+      </div>
+    </div>
+  
+    <table class="table">
+      <tbody>
+        <tr>
+          <th scope="row">Duration</th>
+          <td>{{ movie?.duration | movieDuration }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Budget</th>
+          <td>{{ movie?.budget | movieBudget }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Release Date</th>
+          <td>{{ movie?.release_date }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Box Office</th>
+          <td>{{ movie?.box_office | movieBudget }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Cinematographers</th>
+          <td>{{ movie?.cinematographers?.join(', ') }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Producers</th>
+          <td>{{ movie?.producers?.join(', ') }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+  </div>
+  
